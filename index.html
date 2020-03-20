@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      font-size: 3rem;
+    }
+
+    .center {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+
+    button {
+      font-size: 3rem;
+      cursor: pointer;
+    }
+
+    .thumbs-down {
+      margin-left: 3rem;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="center">
+    <div class="thumbs-up">
+      <button onclick="like()">
+        &#x1f44d; <span class="thumbsUp"></span>
+      </button>
+    </div>
+
+    <div class="thumbs-down">
+      <button onclick="unlike()">
+        &#x1f44e; <span class="thumbsDown"></span>
+      </button>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    // First I grab thumbsUp and thumbsDown class with querySelector 
+    //and store them inside a variable
+    let thumbsUpValue = document.querySelector(".thumbsUp");
+    let thumbsDownValue = document.querySelector(".thumbsDown");
+
+    // Immediately the html file loads I set the initial values of thumbsUp and thumbsDown to 0
+    window.onload = () => {
+      // Notice here that I use either textContent and innerHTML, both works
+      thumbsUpValue.innerHTML = 0;
+      thumbsDownValue.textContent = 0;
+    }
+
+    // This functions adds 1 to thumbsUp when the button is clicked
+    const like = () => {
+      thumbsUpValue.textContent++;
+    }
+
+    // This functions removes 1 from thumbsDoen when the button is clicked
+    const unlike = () => {
+      thumbsDownValue.innerHTML++;
+    }
+
+  </script>
+</body>
+
+</html>
